@@ -5,7 +5,7 @@
 #
 # Dependencies: pygtk pynotify
 #
-# "battery" is a python module that notify on the screen
+# "batterypunish" is a python module that notify on the screen
 # a message alert when the charge of battery is at 10 %.
 # Use the 'pynotify' library to create and notify a small graphical notification
 # on the screen.
