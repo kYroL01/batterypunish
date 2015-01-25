@@ -33,7 +33,7 @@ def charge_or_energy():
         
     f = os.path.exists("/sys/class/power_supply/BAT0/charge_now")
     if f:
-        now = "/sys/class/power_supply/BAT0/charge_full"
+        now = "/sys/class/power_supply/BAT0/charge_now"
     else:
         now = "/sys/class/power_supply/BAT0/energy_now"
 
@@ -44,6 +44,9 @@ def charge_or_energy():
 # (located in BAT0 directory system)
 #
 def percent_battery_and_status():
+
+    # call function to understand if the system use 'charge' or 'energy'
+    full, now = charge_or_energy();
 
     s = "/sys/class/power_supply/BAT0/status"
 
