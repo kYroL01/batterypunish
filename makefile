@@ -6,7 +6,7 @@ uninstall:
 	sudo rm -f /usr/bin/battery
 	sudo rm -f /usr/share/pixmaps/punisher_icon.png
 
-clean:
+clear:
 	rm -fr $(DIR)
 
 
