@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+#
+# Michele Campus <fci1908@gmail.com>
+# 
 # encoding: utf-8
 #
 # Alert you when battery status are low
