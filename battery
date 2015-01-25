@@ -11,46 +11,76 @@
 # on the screen.
 #
 #
-
 import pygtk
 pygtk.require('2.0')
 import pynotify
 import sys
+import os.path
 import time
 
-# function to calculate te battery status (in percent)
+
+#
+# function to determine if power_supply use 
+# charge_battery_props[] or energy_battery_props
+#
+def charge_or_energy():
+
+    f = os.path.exists("/sys/class/power_supply/BAT0/charge_full")
+    if f:
+        full = "/sys/class/power_supply/BAT0/charge_full"
+    else:
+        full = "/sys/class/power_supply/BAT0/energy_full"
+        
+    f = os.path.exists("/sys/class/power_supply/BAT0/charge_now")
+    if f:
+        now = "/sys/class/power_supply/BAT0/charge_full"
+    else:
+        now = "/sys/class/power_supply/BAT0/energy_now"
+
+    return (full, now)
+
+#
+# function to calculate the battery status (in percent)
+# (located in BAT0 directory system)
+#
 def percent_battery_and_status():
-    
-    # read the file 'charge_full' located in BAT0 directory system
-    with open ("/sys/class/power_supply/BAT0/charge_full", "r") as myfile:
+
+    s = "/sys/class/power_supply/BAT0/status"
+
+    # read the file for full charge of the battery
+    with open (full, "r") as myfile:
         max_charge = myfile.read()
         max_ch = float(max_charge)
-        print max_charge
+        # print max_charge
     
-    # read the file 'charge_now' located in BAT0 directory system
-    with open ("/sys/class/power_supply/BAT0/charge_now", "r") as myfile:
-        charge_now = myfile.read()
-        ch_now = float(charge_now)
-        print charge_now
+    # read the file for current charge of the battery
+    with open (now, "r") as myfile:
+        curr = myfile.read()
+        ch_now = float(curr)
+        # print charge_now
 
     # read the file 'status' located in BAT0 directory system
-    with open ("/sys/class/power_supply/BAT0/status", "r") as myfile:
+    with open (s,"r") as myfile:
         status = myfile.read()
-        print status
+        # print status
             
     # calculate the real time percent of the battery
     percent = (ch_now / max_ch) * 100
     
     return (percent, status)
   
-
-# MAIN
+##
+## MAIN
+##
 def main():
 
-    chk = False
-    x = 3
+    msg_1 = "WARNING !!!"
+    msg_2 = "Battery charge low. Please recharge immediately"
+    loc = "/usr/share/pixmaps/punisher_icon.png"
     b_status = "Discharging\n"
     lev_down_batt = 10.0
+    x = 3
+    chk = False
 
     # infinite loop
     while(True):
@@ -67,7 +97,7 @@ def main():
 
             # must notify - battery charge is low
             if not chk and x > 0:
-                n = pynotify.Notification("WARNING !!!", "Battery charge low. Please recharge immediately", "/usr/share/pixmaps/punisher_icon.png")
+                n = pynotify.Notification(msg_1, msg_2, loc)
                 n.set_urgency(pynotify.URGENCY_CRITICAL)
                 if not n.show():
                     print "Failed to send notification"
