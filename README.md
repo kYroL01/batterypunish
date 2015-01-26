@@ -28,7 +28,7 @@ Example
 =======
 This is an example of how to use it for [Openbox][opbx] window manager
 
-Once installed, put the command in file `autostart`:
+Once installed, put the command in file called `autostart`:
 ```
 # Run the system-wide support stuff
 #.$GLOBALAUTOSTART
@@ -38,7 +38,7 @@ Once installed, put the command in file `autostart`:
 # batterypunish cmd
 battery &
 ```
-The file must be inside the config directory of openbox in the home folder, for example:
+If you don't have this file, create it. The file must be inside the config directory of openbox in the home folder, for example:
 `:~/.config/.openbox`
 
 This file is called the *openbox-autostart* file located in `/usr/lib/openbox`
