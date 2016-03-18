@@ -4,8 +4,7 @@ batterypunish
 **batterypunish** is a python module that notify on the screen a message alert when the charge of battery is at 10 %.
 Use the 'pynotify' library to create and notify a small graphical notification on the screen.
 
-Install
-=======
+##Install
 
 Once in the batterypunish folder, launch the **makefile** with
 
@@ -16,16 +15,15 @@ or, alternatively:
 1. copy `punisher_icon.png` into `/usr/share/pixmaps/`
 2. copy `battery` into `/usr/bin/`
 
-Unistall
-========
+##Unistall
 
 In *makefile* directory,
 
 1. `make uninstall`
 2. `make clear`
 
-Example
-=======
+##Example
+
 This is an example of how to use it for [Openbox][opbx] window manager
 
 Once installed, put the command in file called `autostart`:
@@ -43,12 +41,13 @@ If you don't have this file, create it. The file must be inside the config direc
 
 This file is called the *openbox-autostart* file located in `/usr/lib/openbox`
 
-Dependencies
-============
 
-batterypunish needs [PyGTK][pygtk] and [pynotify][pynot]
+
+##Dependencies
+
+batterypunish needs [PyGTK][pygtk] and [notify][pynot]
 
 
 [pygtk]: http://www.pygtk.org/downloads.html
-[pynot]: https://github.com/seb-m/pyinotify
+[pynot]: python-notify
 [opbx]: http://openbox.org/wiki/Main_Page
