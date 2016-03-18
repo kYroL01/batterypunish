@@ -45,9 +45,9 @@ This file is called the *openbox-autostart* file located in `/usr/lib/openbox`
 
 ##Dependencies
 
-batterypunish needs [PyGTK][pygtk] and [notify][pynot]
+batterypunish needs [PyGTK][pygtk] and [python-notify][pynot]
 
 
 [pygtk]: http://www.pygtk.org/downloads.html
-[pynot]: python-notify
+[pynot]: https://ole.im/blog/2011/oct/20/python-notify
 [opbx]: http://openbox.org/wiki/Main_Page
