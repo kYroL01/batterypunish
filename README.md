@@ -4,50 +4,32 @@ batterypunish
 **batterypunish** is a python module that notify on the screen a message alert when the charge of battery is at 10 %.
 Use the 'pynotify' library to create and notify a small graphical notification on the screen.
 
-##Install
+## Requirements
 
-Once in the batterypunish folder, launch the **makefile** with
+batterypunish needs [PyGTK][pygtk] and [python-notify][pynot]
+
+### Debian
+
+`sudo apt-get install python-notify`
+
+## Install
 
 `make install`
 
 or, alternatively:
 
-1. copy `punisher_icon.png` into `/usr/share/pixmaps/`
-2. copy `battery` into `/usr/bin/`
+1. `cp punisher_icon.png /usr/share/pixmaps/`
+2. `cp battery.py /usr/local/bin/`
+3. `chmod +x /usr/local/bin/battery.py`
 
-##Unistall
+## Unistall
 
 In *makefile* directory,
 
 1. `make uninstall`
 2. `make clear`
 
-##Example
-
-This is an example of how to use it for [Openbox][opbx] window manager
-
-Once installed, put the command in file called `autostart`:
-```
-# Run the system-wide support stuff
-#.$GLOBALAUTOSTART
-
-## Programs to execute from the start-up
-
-# batterypunish cmd
-battery &
-```
-If you don't have this file, create it. The file must be inside the config directory of openbox in the home folder, for example:
-`:~/.config/.openbox`
-
-This file is called the *openbox-autostart* file located in `/usr/lib/openbox`
-
-
-
-##Dependencies
-
-batterypunish needs [PyGTK][pygtk] and [python-notify][pynot]
-
 
 [pygtk]: http://www.pygtk.org/downloads.html
-[pynot]: https://ole.im/blog/2011/oct/20/python-notify
+[pynot]: https://debian.pkgs.org/9/debian-main-amd64/python-notify_0.1.1-4_amd64.deb.html
 [opbx]: http://openbox.org/wiki/Main_Page
