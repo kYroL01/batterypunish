@@ -10,6 +10,8 @@ batterypunish needs [PyGTK][pygtk] and [python-notify][pynot]
 
 ### Debian
 
+`sudo apt-get install libnotify-cil-dev`
+
 `sudo apt-get install python-notify`
 
 ## Install
