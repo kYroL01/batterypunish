@@ -95,7 +95,7 @@ class PyAlert(gtk.Window):
 ##
 def main():
 
-    loc = "/usr/share/pixmaps/punisher_icon.png"
+    loc = "/usr/share/pixmaps/punicon.png"
     b_status = "Discharging\n"
     lev_down_batt = 20.0
     chk = False
