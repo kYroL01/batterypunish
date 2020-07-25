@@ -1,13 +1,9 @@
 install:
 	sudo cp -f $(DIR)punisher_icon.png /usr/share/pixmaps/
-	sudo cp -f $(DIR)battery /usr/bin/
+	sudo cp -f $(DIR)battery.py /usr/local/bin/
 
 uninstall:
-	sudo rm -f /usr/bin/battery
+	sudo rm -f /usr/local/bin/battery.py
 	sudo rm -f /usr/share/pixmaps/punisher_icon.png
 
-clear:
-	rm -fr $(DIR)
-
-
-.PHONY: istall unistall clear
+.PHONY: install unistall
