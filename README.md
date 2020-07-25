@@ -2,6 +2,7 @@ batterypunish
 =============
 
 **batterypunish** is a python service to notify a message alert when the charge of battery is 20 %.
+
 Use the `gtk` library to create and notify a small graphical notification on the screen.
 
 
