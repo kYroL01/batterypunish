@@ -11,7 +11,7 @@ Use the `gtk` library to create and notify a small graphical notification on the
 
 `make uninstall`
 
-Now your file is under `/usr/local/bin`
+Now binary file is under `/usr/local/bin`
 
 
 ## Reload systemd manager configuration
