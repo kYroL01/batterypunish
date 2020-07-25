@@ -15,13 +15,13 @@ Now your file is under `/usr/local/bin`
 
 
 ## Reload systemd manager configuration
-systemctl daemon-reload
+`systemctl daemon-reload`
 
 ## Launch the service
-systemctl start batterypun
+`systemctl start batterypun`
 
 ## Enable the service from startup
-systemctl enable batterypun
+`systemctl enable batterypun`
 
 
 ## Dependencies
