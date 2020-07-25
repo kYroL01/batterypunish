@@ -1,0 +1,14 @@
+[Unit]
+Description=Battery Punish alert service 
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=kyrol
+ExecStart=/usr/bin/env python /usr/local/bin/battery.py
+
+[Install]
+WantedBy=multi-user.target

@@ -13,11 +13,15 @@ Use the `gtk` library to create and notify a small graphical notification on the
 
 Now your file is under `/usr/local/bin`
 
-Modify the permission and run in background
 
-`chmod +x /usr/local/bin/battery.py`
+## Reload systemd manager configuration
+systemctl daemon-reload
 
-`sudo /usr/local/bin/battery.py &`
+## Launch the service
+systemctl start batterypun
+
+## Enable the service from startup
+systemctl enable batterypun
 
 
 ## Dependencies
