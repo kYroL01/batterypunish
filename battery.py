@@ -51,23 +51,22 @@ def percent_battery_and_status():
     with open (full, "r") as myfile:
         max_charge = myfile.read()
         max_ch = float(max_charge)
-        print(max_charge)
+        #print(max_charge)
     
     # read the file for current charge of the battery
     with open (now, "r") as myfile:
         curr = myfile.read()
         ch_now = float(curr)
-        print(ch_now)
+        #print(ch_now)
 
     # read the file 'status' located in BAT0 directory system
     with open (s,"r") as myfile:
         status = myfile.read()
-        print(status)
+        #print(status)
             
     # calculate the real time percent of the battery
     percent = (ch_now / max_ch) * 100
-    print(percent)
-    print("\n")
+    #print(percent)
     
     return (percent, status)
 
